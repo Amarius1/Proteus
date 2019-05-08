@@ -6,8 +6,6 @@
 $("a[btn]").addClass("ripple");
 
 
-
-
 (function(window) {
     'use strict';
 

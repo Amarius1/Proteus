@@ -5,27 +5,33 @@
 	<link rel="icon" href="icon.png">
 
 	<link href="proteus.css" type="text/css" rel="stylesheet">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons|Material+Icons+Outlined'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
-<body>
+<body style="background-color: rgba(1,1,1,0.1);">
 
 <section bar-top>
   <a btn icon>menu</a>
-  <p>Title</p>
+  <p>Design</p>
   <span actions>
-  <a btn icon>settings</a>
-	<a btn icon class="accent">book</a>
-	<a btn icon class="accent">favorite_border</a>
+    <a btn icon>calendar_today</a>
+    <a btn icon>camera_enhance</a>
+    <a btn icon class="accent">build</a>
     <a btn class="raised accent">Button</a>
   </span>
-	
-
-
-
-
 </section>
+
+<span card>
+  <p>Card title</p>
+  <article>This is an article text.</article>
+
+  <span actions class="divider right">
+    <a btn class="accent">Button</a>
+    <a btn class="accent">Button</a>
+  </span>
+</span>
+
 
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
