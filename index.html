@@ -8,6 +8,19 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+  <style>
+    .example
+    {
+      height: 400px;
+      width: 300px;
+    }
+    .example-flex
+    {
+      min-height: 200px;
+      width: 300px;
+    }
+  </style>
 </head>
 <body style="background-color: rgba(1,1,1,0.1);">
 
@@ -15,23 +28,35 @@
   <a btn icon>menu</a>
   <p>Design</p>
   <span actions>
-    <a btn icon>calendar_today</a>
+    <a btn icon>perm_phone_msg</a>
     <a btn icon>camera_enhance</a>
     <a btn icon class="accent">build</a>
     <a btn class="raised accent">Button</a>
   </span>
 </section>
 
-<span card>
-  <p>Card title</p>
+<span card class="example-flex">
+  <img src="https://myfirstshiba.com/wp-content/uploads/2017/11/IMG_0282-copy.jpg">
+  <p headline>Card title</p>
   <article>This is an article text.</article>
 
-  <span actions class="divider right">
-    <a btn class="accent">Button</a>
-    <a btn class="accent">Button</a>
+  <span actions class="stack divider">
+    <a btn class="accent raised">button</a>
+    <div right>
+      <a btn icon>art_track</a>
+      <a btn icon>share</a>
+    </div>
   </span>
-</span>
 
+
+
+</span>
+<span collapsible class="divider">
+  <a>Details</a>
+  <div panel>
+    <article>Content</article>
+  </div>
+</span>
 
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

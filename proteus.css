@@ -48,6 +48,7 @@
   --switch: rgba(60, 0, 265,1);
   --switch-bar: rgba(50, 10, 240, 0.25);
   --light: white;
+  --mark: rgba(10, 0, 255, 0.2);
 }
 ::-moz-selection { background: #e8eaf6;}
 ::selection { background: #e8eaf6;}
@@ -99,7 +100,7 @@
   margin-top: -10px;
   margin-left: -10px;
   opacity: 1;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.12);
   -webkit-transition: all 0.7s ease-out;
   -moz-transition: all 0.7s ease-out;
   -o-transition: all 0.7s ease-out;
@@ -195,8 +196,8 @@ p
   line-height: 2rem;
   letter-spacing: 0;
   font-weight: 400;
+  margin: 4px 0px;
 }
-
 hr {
   border-color: rgba(0,0,0,1);
   margin-top: 3px !important;
@@ -208,6 +209,17 @@ hr {
  height: 1px;
  background-color: red;
  color: red;
+}
+ins
+{
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: -1px !important;
+}
+mark
+{
+  background-color: var(--mark);
+  border-radius: 2px;
 }
 H1
 {
@@ -396,7 +408,7 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
 {
   border-style: solid;
   border-width: 1px;
-  border-color: #212121;
+  border-color: rgba(70,70,70,1);
   padding: 6px 12px;
   margin: 3px 2px;
   font-weight: 500;
@@ -424,6 +436,7 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
   height: auto;
   background-color: white;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1), 0 3px 1px -2px rgba(0,0,0,0.1), 0 1px 5px 0 rgba(0,0,0,0.1);
+   user-select: none;
 }
 [bar-top] *
 {
@@ -438,6 +451,7 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
   line-height: 40px !important;
   font-size: 1.52em;
   align-items: stretch;
+  user-select: text !important;
 }
 [bar-top] [actions]
 {
@@ -447,6 +461,10 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
  padding: 0px 0px;
 
 }
+[bar-top] [actions] [div][right]
+{
+  float: right;
+}
 [bar-top]:after {
   content: "";
   display: table;
@@ -455,9 +473,11 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
 [btn][icon]
 {
   border-radius: 40px;
-  padding: 8px 8px;
+  padding: 7.8px 7.8px;
   margin: 0px 1px;
   color: rgba(70,70,70,1);
+  font-size: 1.57em;
+  transition: all 0.4s;
 }
 [btn][icon].accent
 {
@@ -488,7 +508,7 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
   margin: -4px;
   margin-left: 0px;
   margin-right: 0px;
-  padding: 11px 11px;
+  padding: 10.5px 10.5px;
 }
 [bar-top] [actions] [btn].large
 {
@@ -545,7 +565,7 @@ input[search]:focus::-webkit-input-placeholder {
   position: relative;
   margin: 5px 5px;
   min-width: 300px;
-  min-height: 300px;
+  min-height: 100px;
   display: inline-block;
   vertical-align: top;
   transition: all 0.4s;
@@ -553,9 +573,22 @@ input[search]:focus::-webkit-input-placeholder {
 
 
 
-[card] > span, [card] > a, [card] > article, [card] > H1, [card] > H2, [card] > H3, [card] > H4, [card] > H5, [card] > H6, [card] > sub
+[card] > a, [card] > article, [card] > H1, [card] > H2, [card] > H3, [card] > H4, [card] > H5, [card] > H6, [card] > sub
 {
   padding: 5px 6px;
+}
+[card] > :first-child
+{
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+[card] > img
+{
+  position: relative;
+  display: block;
+  width: 100%;
 }
 [card] p
 {
@@ -569,33 +602,169 @@ input[search]:focus::-webkit-input-placeholder {
   font-weight: 500;
   margin: 0px;
   margin-bottom: -5px;
+  color: rgba(50,50,50,1);
+}
+[card] > p[headline]
+{
+  text-transform: uppercase !important;
 }
 [card] > [actions]
 {
   position: absolute;
-  bottom: 1px;
-  left: 1px;
-  padding: 0px;
-  width: 100%;
+  bottom: 0.5px;
+  left: 0px;
+  padding: 1px 1px;
+  max-width: 100%;
+  padding-bottom: 1.5px;
+}
+[card] > [actions].stack
+{
+  display: block;
+  position: relative;
+}
+[card] > [actions]:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+[card] > [actions] *
+{
   float: left;
+  display: inline-flex;
 }
-[card] > [actions].right
+[card] > [actions] > div[right]
 {
-  padding-right: 1px;
+    float: right;
 }
-[card] > [actions].right *
+[card] > [actions][right] *
+{
+  float: right;
+}
+[card] > [actions] [right]
 {
   float: right;
 }
-[card] > [actions].right *
+[card] > [actions][right]
 {
-  float: right;
+  display: flex !important;
+  flex-direction: row-reverse;
+}
+[card] > [actions] [btn][icon]
+{
+  margin: 0px !important;
 }
 [card] > [actions] > [btn]
 {
   margin: 3px !important;
 }
-[card] > [actions].divider
+[card] > .divider
 {
-  border-top: 1px solid rgba(100,100,100,0.4);
+  border-top: 1px solid rgba(70,70,70,0.3);
+}
+details
+{
+  text-decoration: none;
+  padding: 5px 5px;
+}
+summary{
+  outline:none;
+  user-select: none;
+  transition: all 0.3s;
+  padding: 5px 5px;
+  font-size: 2em;
+}
+details summary ~ * {
+  opacity: 0;
+  transition: all 0.3s;
+}
+details[open] summary ~ * {
+  animation: sweep .2s ease-in-out;
+  opacity: 1 !important;
+}
+details summary::-webkit-details-marker {
+  display:none;
+}
+@keyframes sweep {
+  0%    {opacity: 0; margin-top: -10px}
+  100%  {opacity: 1; margin-top: 0px}
+}
+
+[collapsible]
+{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20) !important;
+  display: block;
+  background-color: white;
+}
+
+[collapsible] > a{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 9px 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  display: block;
+  user-select: none;
+  font-size: 19px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(70,70,70,0) !important;
+  transition: all 0.2s;
+}
+
+[collapsible] > a.active {
+  border-bottom: 1px solid rgba(70,70,70,0.3) !important;
+  transition: all 0.3s;
+  border-radius: 0px 0px 0px 0px !important;
+}
+a.active + [panel]
+{
+  margin-top: 0px;
+  transition: all 0.2s;
+}
+a.active + [panel] *
+{
+  animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+[panel] {
+  padding: 5px 5px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+  position: relative;
+  margin-top: -10px;
+  visibility: hidden;
+  display: block;
+  width: 100%;
+}
+[card] [collapsible]
+{
+    box-shadow: none !important;
+    border-radius: 0px 0px 5px 5px;
+}
+[card] [collapsible]:last-child a
+{
+  border-radius: 0px 0px 5px 5px;
+}
+[card] [collapsible] [panel]
+{
+    border-radius: 0px 0px 5px 5px;
+}
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-2px);
+    visibility: 0;
+
+  }
+  100% {
+    transform: translateY(0px);
+    visibility: 1;
+
+  }
 }
