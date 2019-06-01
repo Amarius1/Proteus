@@ -1,3 +1,4 @@
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Proteus</title><!--down of a brave new world-->
@@ -22,7 +23,7 @@
     }
   </style>
 </head>
-<body style="background-color: rgba(1,1,1,0.1);">
+<body style="background-color: rgba(1,1,1,0.1); overflow-x: hidden;">
 
 <section bar-top>
   <a btn icon>menu</a>
@@ -35,28 +36,55 @@
   </span>
 </section>
 
-<span card class="example-flex">
-  <img src="https://myfirstshiba.com/wp-content/uploads/2017/11/IMG_0282-copy.jpg">
-  <p headline>Card title</p>
-  <article>This is an article text.</article>
-
-  <span actions class="stack divider">
-    <a btn class="accent raised">button</a>
-    <div right>
-      <a btn icon>art_track</a>
-      <a btn icon>share</a>
-    </div>
+    
+<section tab-count="4" class="tabs">
+  <input type="radio" name="tab" id="tab1" checked>
+  <span action>
+    <label for="tab1">Tab 1</label>
+    <div content>TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue.</div>
   </span>
 
+  <input type="radio" name="tab" id="tab2">
+  <span action>
+    <label for="tab2">Tab 2</label>
+    <div content>TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
+  </span>
+    
+ <input type="radio" name="tab" id="tab3">
+  <span action>
+    <label for="tab3">Tab 3</label>
+    <div content>TAB 3 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
+  </span>
+    
+ <input type="radio" name="tab" id="tab4">
+  <span action>
+    <label for="tab4">Tab 4</label>
+    <div content>TAB 4 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
+  </span>
 
+  <div class="slide condensed"></div>
+</section>
+    
+    
 
-</span>
-<span collapsible class="divider">
-  <a>Details</a>
-  <div panel>
-    <article>Content</article>
-  </div>
-</span>
+    
+    
+<section tab-count="2" class="tabs">
+  <input type="radio" name="tab2" id="tab6" checked>
+  <span action>
+    <label for="tab6">Tab 1</label>
+    <div content>TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue.</div>
+  </span>
+
+  <input type="radio" name="tab2" id="tab7">
+  <span action>
+    <label for="tab7">Tab 2</label>
+    <div content>TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
+  </span>
+
+  <div class="slide"></div>
+</section>
+				
 
 <!--scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

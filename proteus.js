@@ -54,7 +54,7 @@ for (i = 0; i < acc2.length; i++) {
   });
 }
 $("a[btn]").addClass("ripple");
-
+$(".tabs > span[action] > label").addClass("ripple");
 
 (function(window) {
     'use strict';
