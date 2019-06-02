@@ -298,6 +298,14 @@ sub {
   vertical-align: middle !important;
   display: inline-block;
 }
+.uppercase 
+{
+    text-transform: uppercase !important;
+}
+.undercase 
+{
+    text-transform: capitalize !important;
+}
 .depth-0
 {
 box-shadow: 0 1px 1px 0 rgba(0,0,0,0), 0 2px 1px -1px rgba(0,0,0,0), 0 1px 3px 0 rgba(0,0,0,0) !important;
@@ -1914,7 +1922,8 @@ table.list
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    padding: 0
+    padding: 0;
+    border-radius: 0 !important;
 }
 
 .tabs input[type=radio] {
@@ -1969,24 +1978,28 @@ table.list
 {
     width: calc(100% / 4);
     margin-left: calc(100% / 8);
+    border-radius: 10px 10px 0px 0px;
 }
 
 .tabs[tab-count="3"] .slide.condensed 
 {
     width: calc(100% / 6);
     margin-left: calc(100% / 12);
+    border-radius: 10px 10px 0px 0px;
 }
 
 .tabs[tab-count="4"] .slide.condensed 
 {
     width: calc(100% / 8);
     margin-left: calc(100% / 16);
+    border-radius: 10px 10px 0px 0px;
 }
 
 .tabs[tab-count="5"] .slide.condensed 
 {
     width: calc(100% / 10);
     margin-left: calc(100% / 20);
+    border-radius: 10px 10px 0px 0px;
 }
 
 .tabs[tab-count="4"] input[type=radio]:nth-of-type(1):checked~.slide {
@@ -2084,19 +2097,49 @@ table.list
     font-size: 18px;
     background-color: white;
     box-sizing: border-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
-    -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: center;
     justify-content: center;
     height: 50px;
     transition: color .2s cubic-bezier(.64, .09, .08, 1);
     will-change: color;
-    width: 100%
-
+    width: 100%;
+    text-transform: uppercase;
+    border-radius: 0px !important;
 }
-
+.tabs:after 
+{
+    content: "";
+    height: 50px;
+    background-color: white;
+    display: block;
+    width: 100%;
+     white-space: pre-line; 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    filter: drop-shadow(0 2px 1px rgba(70, 70, 70,0.4));
+}
+.tabs label i 
+{
+    display: block !important;
+    position: relative;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 26px;
+}
+.tabs.accent label
+{
+    background-color: var(--accent);
+    color: rgba(255,255,255,0.95);
+}
+.tabs.accent .slide 
+{
+    background-color: white;
+}
+.tabs.accent input[type=radio]:checked+[action] label {
+    color: white;
+}
 .slide {
     background: var(--accent);
     height: 4px;
@@ -2105,7 +2148,7 @@ table.list
     top: 46px;
     transition: left .3s cubic-bezier(.64, .09, .08, 1);
     will-change: left;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 1px 1px 0px 0px;
     z-index: 1 !important;
 }
 
@@ -2126,4 +2169,80 @@ table.list
 
 .tabs [action]:nth-last-child(2) label {
     border-top-right-radius: 3px
+}
+
+.tabs.stacked label 
+{
+    display: block !important;
+    width: 100%;
+    position: relative;
+     align-items: center;
+    justify-content: center;
+    text-align: center;
+	align-items: center;
+     height: 60px;
+}
+.tabs.stacked label i
+{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+	align-items: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 28px;
+}
+.tabs.stacked .slide
+{
+    top: 56px !important;
+}
+.tabs.stacked:after 
+{
+    content: "";
+    height: 60px;
+    background-color: white;
+    display: block;
+    width: 100%;
+     white-space: pre-line; 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    filter: drop-shadow(0 2px 1px rgba(70, 70, 70,0.4));
+}
+.tabs [content]
+{
+    animation: slide-bottom2 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-bottom2 {
+  0% {
+    transform: translateY(-2px);
+    visibility: 0;
+    opacity: 0;
+
+  }
+  100% {
+    transform: translateY(0px);
+    visibility: 1;
+    opacity: 1;
+
+  }
+}
+.tabs.editor 
+{
+    width: 200px;
+}
+.tabs.editor label 
+{
+    width: 50px;
+}
+.tabs.editor input[type=radio]:checked+[action] {
+    width: 50px;
+}
+.center-x 
+{
+  position: absolute;
+  left: 50%;
+  margin-left: -25%;
+  top: 50%;
+  margin-top: -50px;
 }

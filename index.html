@@ -1,94 +1,127 @@
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Proteus</title><!--down of a brave new world-->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="icon" href="icon.png">
+    <meta charset="UTF-8">
+    <title>Proteus</title>
+    <!--down of a brave new world-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="icon.png">
 
-	<link href="proteus.css" type="text/css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link href="proteus.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 
-	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
 
-  <style>
-    .example
-    {
-      height: 400px;
-      width: 300px;
-    }
-    .example-flex
-    {
-      min-height: 200px;
-      width: 300px;
-    }
-  </style>
+    <style>
+        .example {
+            height: 400px;
+            width: 300px;
+        }
+
+        .example-flex {
+            min-height: 200px;
+            width: 300px;
+        }
+    </style>
 </head>
-<body style="background-color: rgba(1,1,1,0.1); overflow-x: hidden;">
 
-<section bar-top>
-  <a btn icon>menu</a>
-  <p>Design</p>
-  <span actions>
-    <a btn icon>perm_phone_msg</a>
-    <a btn icon>camera_enhance</a>
-    <a btn icon class="accent">build</a>
-    <a btn class="raised accent">Button</a>
-  </span>
-</section>
+<body style="background-color: rgba(165,165,165,0.1); overflow-x: hidden;">
 
+    <section bar-top>
+        <a btn icon>menu</a>
+        <p>Design</p>
+        <span actions>
+            <a btn icon>perm_phone_msg</a>
+            <a btn icon>camera_enhance</a>
+            <a btn icon class="accent">build</a>
+            <a btn class="raised accent">Button</a>
+        </span>
+    </section>
+
+
+    <section tab-count="4" class="tabs">
+        <input type="radio" name="tab" id="tab1" checked>
+        <span action>
+            <label for="tab1">Tab 1</label>
+            <div content>TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue.</div>
+        </span>
+
+        <input type="radio" name="tab" id="tab2">
+        <span action>
+            <label for="tab2">Tab 2</label>
+            <div content>TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
+        </span>
+
+        <input type="radio" name="tab" id="tab3">
+        <span action>
+            <label for="tab3">Tab 3</label>
+            <div content>TAB 3 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
+        </span>
+
+        <input type="radio" name="tab" id="tab4">
+        <span action>
+            <label for="tab4">Tab 4</label>
+            <div content>TAB 4 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
+        </span>
+
+        <div class="slide condensed"></div>
+    </section>
+
+
+
+
+
+    <section tab-count="2" class="tabs stacked">
+        <input type="radio" name="tab2" id="tab6" checked>
+        <span action>
+            <label for="tab6"><i icon>near_me</i>Tab 1</label>
+            <div content>TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue.</div>
+        </span>
+
+        <input type="radio" name="tab2" id="tab7">
+        <span action>
+            <label for="tab7"><i icon>map</i>Tab 2</label>
+            <div content>TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
+        </span>
+
+        <div class="slide"></div>
+    </section>
     
-<section tab-count="4" class="tabs">
-  <input type="radio" name="tab" id="tab1" checked>
-  <span action>
-    <label for="tab1">Tab 1</label>
-    <div content>TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue.</div>
-  </span>
+      <section tab-count="4" class="tabs editor center-x">
+        <input type="radio" name="editor" id="tab8" checked>
+        <span action>
+            <label for="tab8"><i icon>format_align_right</i></label>
+            <div content>Left</div>
+        </span>
 
-  <input type="radio" name="tab" id="tab2">
-  <span action>
-    <label for="tab2">Tab 2</label>
-    <div content>TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
-  </span>
-    
- <input type="radio" name="tab" id="tab3">
-  <span action>
-    <label for="tab3">Tab 3</label>
-    <div content>TAB 3 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
-  </span>
-    
- <input type="radio" name="tab" id="tab4">
-  <span action>
-    <label for="tab4">Tab 4</label>
-    <div content>TAB 4 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
-  </span>
+        <input type="radio" name="editor" id="tab9">
+        <span action>
+            <label for="tab9"><i icon>format_align_center</i></label>
+            <div style="text-align: center;" content>Center</div>
+        </span>
+          
+        <input type="radio" name="editor" id="tab10">
+        <span action>
+            <label for="tab10"><i icon>format_align_justify</i></label>
+            <div style="text-align: justify;" content>Justify</div>
+        </span>
+          
+        <input type="radio" name="editor" id="tab11">
+        <span action>
+            <label for="tab11"><i icon>format_align_left</i></label>
+            <div style="text-align: right;" content>Right</div>
+        </span>
+          
 
-  <div class="slide condensed"></div>
-</section>
-    
-    
+        <div class="slide condensed"></div>
+    </section>
 
-    
-    
-<section tab-count="2" class="tabs">
-  <input type="radio" name="tab2" id="tab6" checked>
-  <span action>
-    <label for="tab6">Tab 1</label>
-    <div content>TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue.</div>
-  </span>
 
-  <input type="radio" name="tab2" id="tab7">
-  <span action>
-    <label for="tab7">Tab 2</label>
-    <div content>TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
-  </span>
-
-  <div class="slide"></div>
-</section>
-				
-
-<!--scripts-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="proteus.js"></script>
+    <!--scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="proteus.js"></script>
 
 
 </body>
