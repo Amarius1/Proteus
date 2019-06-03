@@ -20,7 +20,7 @@
     </style>
 </head>
 
-<body style="background-color: rgba(165,165,165,0.1); overflow-x: hidden;">
+<body style="background-color: rgba(235,235,235,0.1); overflow-x: hidden;">
 
     <section bar-top>
         <a btn icon>menu</a>
@@ -30,20 +30,78 @@
             <a href="https://material.io/design/components/tabs.html" btn class="outlined accent">Resources</a>
         </span>
     </section>
- <span style="left: 100px;" class="dropdown">
+ <span left dropdown>
       	<a btn icon class="activator">more_vert</a>
       	<div class="dd-menu">
-          <a class="btn ripple">Food</a>
-      		<a class="btn ripple">Clothes</a>
-      		<a class="btn ripple">Accessories</a>
-      		<a class="btn ripple divider">Xiaomi</a>
+          <a class="ripple">Food</a>
+      		<a class="ripple">Clothes</a>
+      		<a class="ripple">Accessories</a>
+      		<a class="ripple divider">Xiaomi</a>
         </div>
       </span>
 
+     <span dropdown>
+      	<a btn icon class="activator">more_vert</a>
+      	<div class="dd-menu">
+          <a class="ripple">Food</a>
+      		<a class="ripple">Clothes</a>
+      		<a class="ripple">Accessories</a>
+            	<a class="ripple">Accessories</a>
+            	<a class="ripple">Accessories</a>
+            	<a class="ripple">Accessories</a>
+            	<a class="ripple">Accessories</a>
+            	<a class="ripple">Accessories</a>
+            	<a class="ripple">Accessories</a>
+      		<a class="ripple divider">Xiaomi</a>
+        </div>
+      </span>
   
+
     
+  <!-- Custom select structure --> 
+
+<span class="dropdown">
+    <label class="current">Companies</label>
+    <div class="list">
+        <ul>
+            <li class="option selected" data-value="None" data-display-text="Companies">None</li>
+            <li class="option" data-value="xiaomi">Xiaomi</li>
+            <li class="option" data-value="samsung">Samsung</li>
+            <li class="option" data-value="lenovo">Motorola</li>
+        </ul>
+    </div>
+</span>
     
+<span class="dropdown">
+    <label class="current">Fruit</label>
+    <div class="list">
+        <ul>
+            <li class="option selected" data-value="None" data-display-text="Fruit">None</li>
+            <li class="option">Apple</li>
+            <li class="option">Banana</li>
+            <li class="option">Raspberry</li>
+            <li class="option">Grapes</li>
+            <li class="option">Melons</li>
+            <li class="option">Tomatoes</li>
+            <li class="option">Avocado</li>
+            <li class="option">Citrus</li>
+            <li class="option">Pear</li>
+            <li class="option">Orange</li>
+        </ul>
+    </div>
+</span>
+    <br><br><br>
+<H6 style="display: block; margin-left: 10px;">For scale:</H6><br>
     
+    <span textfield>
+  		<input type="text" required="required" id="vart" />
+  		<label for="vat">Label Text</label>
+  	</span>
+
+
+  <!-- Custom select structure --> 
+
+
 
     <!--scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

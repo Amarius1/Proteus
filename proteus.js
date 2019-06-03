@@ -1,21 +1,84 @@
-  /*
-var acc = document.querySelectorAll('[collapsible] > a');
-var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
 
-    this.classList.toggle("active");
+// Open/close
+$(document).on('click', '.dropdown', function(event) {
+  $('.dropdown').not($(this)).removeClass('open');
+  $(this).toggleClass('open');
+  if ($(this).hasClass('open')) {
+    $(this).find('.option').attr('tabindex', 0);
+    $(this).find('.selected').focus();
+  } else {
+    $(this).find('.option').removeAttr('tabindex');
+    $(this).focus();
+  }
+});
+// Close when clicking outside
+$(document).on('click', function(event) {
+  if ($(event.target).closest('.dropdown').length === 0) {
+    $('.dropdown').removeClass('open');
+    $('.dropdown .option').removeAttr('tabindex');
+  }
+  event.stopPropagation();
+});
+// Option click
+$(document).on('click', '.dropdown .option', function(event) {
+  $(this).closest('.list').find('.selected').removeClass('selected');
+  $(this).addClass('selected');
+  var text = $(this).data('display-text') || $(this).text();
+  $(this).closest('.dropdown').find('.current').text(text);
+  $(this).closest('.dropdown').prev('select').val($(this).data('value')).trigger('change');
+});
 
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
+// Keyboard events
+$(document).on('keydown', '.dropdown', function(event) {
+  var focused_option = $($(this).find('.list .option:focus')[0] || $(this).find('.list .option.selected')[0]);
+  // Space or Enter
+  if (event.keyCode == 32 || event.keyCode == 13) {
+    if ($(this).hasClass('open')) {
+      focused_option.trigger('click');
     } else {
-      panel.style.display = "block";
+      $(this).trigger('click');
     }
-  });
-}
-*/
+    return false;
+    // Down
+  } else if (event.keyCode == 40) {
+    if (!$(this).hasClass('open')) {
+      $(this).trigger('click');
+    } else {
+      focused_option.next().focus();
+    }
+    return false;
+    // Up
+  } else if (event.keyCode == 38) {
+    if (!$(this).hasClass('open')) {
+      $(this).trigger('click');
+    } else {
+      var focused_option = $($(this).find('.list .option:focus')[0] || $(this).find('.list .option.selected')[0]);
+      focused_option.prev().focus();
+    }
+    return false;
+  // Esc
+  } else if (event.keyCode == 27) {
+    if ($(this).hasClass('open')) {
+      $(this).trigger('click');
+    }
+    return false;
+  }
+});
+
+$(document).ready(function() {
+  create_custom_dropdowns();
+});
+
+$('.md-select').on('click', function () {
+  $(this).toggleClass('active');
+});
+
+$('.md-select ul li').on('click', function () {
+   var ID = 'whatEver';
+  var v = $(this).text();
+  $('.md-select label a').text(v);
+});
 
 var acc = document.querySelectorAll('[collapsible] > a');
 var i;
@@ -55,7 +118,8 @@ for (i = 0; i < acc2.length; i++) {
 }
 $("a[btn]").addClass("ripple");
 $(".tabs > span[action] > label").addClass("ripple");
-
+$(".dropdown > label").addClass("ripple");
+$(".dropdown li").addClass("ripple");
 (function(window) {
     'use strict';
 
@@ -393,16 +457,16 @@ $(".tabs > span[action] > label").addClass("ripple");
 
 
 // drop down menu script
-	$( ".dropdown" ).on( "click", ".activator", function() {
-		$('.dropdown').removeClass('open');
+	$( "[dropdown]" ).on( "click", ".activator", function() {
+		$('[dropdown]').removeClass('open');
 		$(this).parent().toggleClass('open');
 
 	});
 
 $(document).on("click", function(event){
-        var $trigger = $(".dropdown");
+        var $trigger = $("[dropdown]");
         if($trigger !== event.target && !$trigger.has(event.target).length){
-            $(".dropdown").removeClass("open");
+            $("[dropdown]").removeClass("open");
 
         }
     });
@@ -568,8 +632,6 @@ $(document).ready(function(){
 	})
 
 })
-
-
 
 
 

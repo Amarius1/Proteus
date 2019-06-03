@@ -358,7 +358,9 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
 }
 @media not all and (pointer: coarse) {
 
-
+    .dropdown .option:hover, .dropdown .option:focus {
+      background-color: rgba(70,70,70,0.12) !important;
+    }
 }
 [btn]:not(.raised):not(.outlined):not(.flat):not([icon])
 {
@@ -993,11 +995,11 @@ img[fill]
     min-width: 70%;
 
 }
-.dropdown {
+[dropdown] {
   position: relative;
   transition: all 0.1s;
 }
-.dropdown.open .dd-menu {
+[dropdown].open .dd-menu {
   opacity: 1;
   background: white;
   animation: scale-in-tr 0.12s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -1005,7 +1007,55 @@ img[fill]
 
 
 }
-.dropdown.open .dd-menu a {
+[dropdown][left].open .dd-menu {
+  left: 5px !important;
+    right: inherit !important;
+     animation: scale-up-tl 0.13s cubic-bezier(0.550, 0.085, 0.680, 0.530) both !important;
+
+
+}
+@keyframes scale-up-tl {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+}
+
+[dropdown][left] .dd-menu {
+  animation: scale-out-tl 0.13s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+      left: 5px !important;
+    right: inherit !important;
+
+}
+@keyframes scale-out-tl {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    opacity: 1;
+  }
+    85% {
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    opacity: 1;
+  }
+}
+
+[dropdown].open .dd-menu a {
   display: block;
   opacity: 1;
   border-radius: 0px;
@@ -1013,19 +1063,21 @@ img[fill]
    animation: fade-in 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.dropdown .dd-menu {
+[dropdown] .dd-menu {
   opacity: 0;
   position: absolute;
   top: 33px;
   right: 5px;
   z-index: 1000;
   border-radius: 5px;
-  animation: scale-out-tr 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: scale-out-tr 0.13s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
   padding: 5px 0px;
     background: white;
+     box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
 
 }
-.dropdown .dd-menu a {
+
+[dropdown] .dd-menu a {
   display: block;
   opacity: 0.3;
   transition: all 0.1s;
@@ -1035,10 +1087,50 @@ img[fill]
   font-weight: 500;
   color: rgba(50,50,50,1);
   letter-spacing: 0.8px;
-    animation: scale-out-tr 0.7s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: scale-out-tr 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 
 }
-.dropdown .dd-menu a.divider {
+[dropdown] .dd-menu a:nth-child(1) 
+{
+    animation-delay: 0s;
+}
+[dropdown] .dd-menu a:nth-child(2) 
+{
+    animation-delay: 0.05s;
+}
+[dropdown] .dd-menu a:nth-child(3) 
+{
+    animation-delay: 0.07s;
+}
+[dropdown] .dd-menu a:nth-child(4) 
+{
+    animation-delay: 0.09s;
+}
+[dropdown] .dd-menu a:nth-child(5) 
+{
+    animation-delay: 0.11s;
+}
+[dropdown] .dd-menu a:nth-child(6) 
+{
+    animation-delay: 0.13s;
+}
+[dropdown] .dd-menu a:nth-child(7) 
+{
+    animation-delay: 0.15s;
+}
+[dropdown] .dd-menu a:nth-child(8) 
+{
+    animation-delay: 0.17s;
+}
+[dropdown] .dd-menu a:nth-child(9) 
+{
+    animation-delay: 0.19s;
+}
+[dropdown] .dd-menu a:nth-child(10) 
+{
+    animation-delay: 0.21s;
+}
+[dropdown] .dd-menu a.divider {
     border-top: 1px solid rgba(100,100,100,0.3);
 
 }
@@ -1448,6 +1540,7 @@ input[type=checkbox]:indeterminate:after
   position: relative;
   display: inline-block;
   margin: 0;
+  margin-left: 4px; margin-right: 4px;
   margin-top: 8px;
   margin-bottom: 8px;
   padding-top: 12px;
@@ -1778,107 +1871,6 @@ table.accent
   box-shadow: none !important;
   filter: drop-shadow(0 0 0.1rem rgba(10,10,10,0.15));
 }
-span.fab .btn.material-icons
-{
-    border-radius: 40px;
-    padding: 18px;
-    margin: 1px 1px;
-    color: rgba(70,70,70,1) !important;
-    font-size: 27px;
-
-}
-span.fab > .btn.material-icons:hover
-{
-     transform: rotate(45deg);
-     filter: drop-shadow(0 0 0.2rem rgba(1,1,1,0.5));
-     box-shadow: none;
-     transition: all 0.3s;
-
-}
-span.fab .btn.material-icons:hover + div
-{
-    opacity: 1;
-    transition: all 0.2s;
-}
-span.fab .btn.material-icons:hover + div a
-{
-  transform: scaleY(1) scaleX(1) translateY(-8px) translateX(0px);
-  transition: all 0.3s;
-}
-span.fab
-{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    text-align: center;
-    align-items:center;
-}
-span.fab div a
-{
-  display: block;
-  text-align: center;
-  align-items: center;
-  color: rgba(100,100,100,1) !important;
-  width: 40px;
-  font-size: 27px;
-  margin-top: -11px !important;
-  margin-bottom: 22px !important;
-  padding: 6.5px !important;
-  background-color: white;
-
-}
-a.fab
-{
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  text-align: center;
-  align-items:center;
-  padding: 18px !important;
-}
-a.fab[position="center"]
-{
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 60px;
-}
-
-.fab div
-{
-  position: absolute;
-  bottom: 60px;
-  opacity: 0;
-  transition: all 0.2s;
-  text-align: center;
-  align-items:center;
-  margin-left: 11px;
-}
-.fab div:hover
-{
-  opacity: 1;
-
-}
-.fab a.material-icons.accent
-{
-  color: white !important;
-}
-.fab a.material-icons.dark
-{
-  color: white !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 table.list tr td
 {
   color: rgba(24,24,24,1);
@@ -2304,7 +2296,36 @@ table.list
   }
 }
 
-
+@keyframes scale-in-tl {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-up-tl {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+}
 @keyframes scale-up-br {
   0% {
     -webkit-transform: scale(0.5);
@@ -2328,6 +2349,9 @@ table.list
             transform-origin: 100% 0%;
     opacity: 1;
   }
+  85% {
+    opacity: 0;
+  }
   100% {
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -2338,11 +2362,278 @@ table.list
 }
 @keyframes fade-in {
   0% {
-     transform: translateY(-8px);
+     transform: translateY(-6px);
     opacity: 0;
   }
   100% {
     transform: translateY(0px);
     opacity: 1;
   }
+}
+
+
+
+.dropdown {
+
+  background-color: transparent !important;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  font-size: 17px;
+  font-weight: normal;
+  height: 54px;
+  line-height: 54px;
+  outline: none;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+          user-select: none;
+  white-space: nowrap;
+  width: 130px;
+  margin: 8px;
+    margin-left: 4px; margin-right: 4px;
+    position: relative;
+    z-index: 4 !important;
+    border-radius: 5px 5px 0px 0px;
+      user-select: none !important;
+}
+.dropdown .current 
+{
+    position: relative;
+    display: block;
+      user-select: none !important;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(70,70,70,0.2);
+    cursor: pointer;
+  outline: none;
+    padding: 0px 12px !important;
+        border-radius: 5px 5px 0px 0px;
+     border-bottom: 1.5px solid rgba(40,40,40,0.5);
+    transition: all 0.3s !important;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    outline: none;
+     text-decoration: none;
+}
+.dropdown.open .current
+{
+     border-bottom: 1.5px solid var(--accent);
+    transition: all 0.3s !important;
+     user-select: none !important;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+* :focus 
+{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    user-select: none !important;
+}
+.dropdown:focus {
+  background-color: #f1f1f1;
+}
+.dropdown:hover {
+  background-color: #f3f3f3;
+}
+.dropdown:active, .dropdown.open {
+}
+.dropdown:after {
+  height: 0;
+  width: 0;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  border-top: 4.5px solid rgba(70,70,70,1);
+  -webkit-transform: origin(50% 20%);
+          transform: origin(50% 20%);
+  transition: all 0.2s ease-in-out;
+  content: '';
+  display: block;
+  margin-top: -2px;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 10 !important;
+}
+.dropdown.open
+{
+     user-select: none !important;
+}
+.dropdown.open:after {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+.dropdown.open .list {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.dropdown.open .option {
+  cursor: pointer;
+}
+.dropdown.wide {
+  width: 100%;
+}
+.dropdown.wide .list {
+  left: 0 !important;
+  right: 0 !important;
+}
+.dropdown .list {
+  box-sizing: border-box;
+/*dropdown list styling*/
+    background-color: white;
+  padding: 3px 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: -2 !important;
+    width: 130px;
+     box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20) !important;
+      animation: scale-out-top 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    border-radius: 0px 0px 5px 5px;
+}
+.dropdown.open .list 
+{
+    
+      animation: scale-in-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes scale-in-top {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 0;
+  }
+  
+  70%
+    {
+        opacity: 0;
+    }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-out-top {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 1;
+  }
+      40%
+    {
+        opacity: 0;
+    }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    opacity: 0;
+  }
+}
+.dropdown .list * 
+{
+    list-style: none;
+}
+.dropdown .list ul 
+{
+    padding: 0px !important;
+        margin: 0px !important;
+}
+.dropdown .list:hover .option:not(:hover) {
+  background-color: transparent !important;
+}
+.dropdown .option {
+  cursor: default;
+  line-height: 42px;
+  outline: none;
+  padding-left: 14px;
+  padding-right: 29px;
+  text-align: left;
+  transition: all 0.2s;
+     font-size: 15px;
+  font-weight: 500;
+  color: rgba(50,50,50,1);
+  letter-spacing: 0.8px;
+}
+.dropdown.open .option 
+{
+     animation: fade-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.dropdown .option.selected:focus {
+  background: #f6f6f6;
+}
+.dropdown .option:nth-child(1) 
+{
+    animation-delay: 0s;
+}
+.dropdown .option:nth-child(2) 
+{
+    animation-delay: 0.05s;
+}
+.dropdown .option:nth-child(3) 
+{
+    animation-delay: 0.07s;
+}
+.dropdown .option:nth-child(4) 
+{
+    animation-delay: 0.09s;
+}
+.dropdown .option:nth-child(5) 
+{
+    animation-delay: 0.11s;
+}
+.dropdown .option:nth-child(6) 
+{
+    animation-delay: 0.13s;
+}
+.dropdown .option:nth-child(7) 
+{
+    animation-delay: 0.15s;
+}
+.dropdown .option:nth-child(8) 
+{
+    animation-delay: 0.17s;
+}
+.dropdown .option:nth-child(9) 
+{
+    animation-delay: 0.19s;
+}
+.dropdown .option:nth-child(10) 
+{
+    animation-delay: 0.21s;
+}
+.dropdown .option:nth-child(11) 
+{
+    animation-delay: 0.23s;
+}
+.dropdown .option:nth-child(12) 
+{
+    animation-delay: 0.25s;
+}
+.dropdown .option:nth-child(13) 
+{
+    animation-delay: 0.27s;
+}
+v
+.dropdown .option:nth-child(14) 
+{
+    animation-delay: 0.29s;
+}
+.dropdown .option.divider {
+    border-top: 1px solid rgba(100,100,100,0.3);
+
 }
