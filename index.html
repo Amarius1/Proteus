@@ -15,110 +15,28 @@
     </script>
 
     <style>
-        .example {
-            height: 400px;
-            width: 300px;
-        }
-
-        .example-flex {
-            min-height: 200px;
-            width: 300px;
-        }
+     
+        
     </style>
 </head>
 
-<body style="background-color: rgba(165,165,165,0.1); overflow-x: hidden;">
+<body style="background-color: rgba(235,235,235,0.1); overflow-x: hidden;">
 
-    <section bar-top>
+    <section bar-top class="fixed flat">
         <a btn icon>menu</a>
-        <p>Design</p>
+        <p>Proteus</p>
+        
         <span actions>
-            <a btn icon>perm_phone_msg</a>
-            <a btn icon>camera_enhance</a>
-            <a btn icon class="accent">build</a>
-            <a btn class="raised accent">Button</a>
+           
         </span>
     </section>
-
-
-    <section tab-count="4" class="tabs">
-        <input type="radio" name="tab" id="tab1" checked>
-        <span action>
-            <label for="tab1">Tab 1</label>
-            <div content>TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue.</div>
-        </span>
-
-        <input type="radio" name="tab" id="tab2">
-        <span action>
-            <label for="tab2">Tab 2</label>
-            <div content>TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
-        </span>
-
-        <input type="radio" name="tab" id="tab3">
-        <span action>
-            <label for="tab3">Tab 3</label>
-            <div content>TAB 3 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
-        </span>
-
-        <input type="radio" name="tab" id="tab4">
-        <span action>
-            <label for="tab4">Tab 4</label>
-            <div content>TAB 4 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
-        </span>
-
-        <div class="slide condensed"></div>
-    </section>
-
-
-
-
-
-    <section tab-count="2" class="tabs stacked">
-        <input type="radio" name="tab2" id="tab6" checked>
-        <span action>
-            <label for="tab6"><i icon>near_me</i>Tab 1</label>
-            <div content>TAB 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet eget lectus eu congue.</div>
-        </span>
-
-        <input type="radio" name="tab2" id="tab7">
-        <span action>
-            <label for="tab7"><i icon>map</i>Tab 2</label>
-            <div content>TAB 2 - Quisque egestas, purus in tempor vulputate, diam augue mollis quam, quis elementum ipsum ex a risus.</div>
-        </span>
-
-        <div class="slide"></div>
-    </section>
+    <br>
+    <section class="container center">
+    <H4 center>Components</H4>
+    <a btn href="tabs.html" class="raised accent">Tabs</a>
+    <a btn href="dropdown.html" class="raised accent">Dropdown</a>
     
-      <section tab-count="4" class="tabs editor center-x">
-        <input type="radio" name="editor" id="tab8" checked>
-        <span action>
-            <label for="tab8"><i icon>format_align_right</i></label>
-            <div content>Left</div>
-        </span>
-
-        <input type="radio" name="editor" id="tab9">
-        <span action>
-            <label for="tab9"><i icon>format_align_center</i></label>
-            <div style="text-align: center;" content>Center</div>
-        </span>
-          
-        <input type="radio" name="editor" id="tab10">
-        <span action>
-            <label for="tab10"><i icon>format_align_justify</i></label>
-            <div style="text-align: justify;" content>Justify</div>
-        </span>
-          
-        <input type="radio" name="editor" id="tab11">
-        <span action>
-            <label for="tab11"><i icon>format_align_left</i></label>
-            <div style="text-align: right;" content>Right</div>
-        </span>
-          
-
-        <div class="slide condensed"></div>
     </section>
-
-
     <!--scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="proteus.js"></script>
