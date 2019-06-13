@@ -2637,3 +2637,183 @@ v
     border-top: 1px solid rgba(100,100,100,0.3);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[drawer] .content {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+}
+.rx_noselect {
+  /* iOS Safari */
+  -webkit-touch-callout: none;
+  /* Chrome/Safari/Opera */
+  -webkit-user-select: none;
+  /* Konqueror */
+  -khtml-user-select: none;
+  /* Firefox */
+  -moz-user-select: none;
+  /* Internet Explorer/Edge */
+  -ms-user-select: none;
+  /* Non-prefixed version, currently
+                                  not supported by any browser */
+  user-select: none;
+}
+.drawer_bg {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  opacity: 0.001;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  visibility: hidden;
+}
+[drawer] {
+  max-width: 320px;
+  width: 75%;
+  height: 100%;
+  left: 0px;
+  top: 0;
+  bottom: 0;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  background: white;
+  position: fixed;
+  z-index: 5;
+  opacity: 0.001;
+  -webkit-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+  -ms-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+}
+[drawer] .antiSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+}
+[drawer] > header > a, [drawer] > header > article, [drawer] > header > H1, [drawer] > header > H2, [drawer] > header > H3, [drawer] > header > H4, [drawer] > header > H5, [drawer] > header > H6, [drawer] > header > sub, [drawer] > header > p, [drawer] > header > label
+{
+    padding: 0px 14px;
+}
+[drawer] > header 
+{
+    padding-bottom: 10px;
+}
+[drawer] > header > :first-child:not(img)
+{
+    padding-top: 16px;
+    padding-bottom: 10px;
+}
+[drawer] > header > H5 
+{
+    font-weight: 450;
+}
+[drawer] > header > img.profile
+{
+    width: 60px;
+    border-radius: 50px;
+}
+[drawer] H1, [drawer] H2, [drawer] H3, [drawer] H4, [drawer] H5, [drawer] H6
+{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+[drawer] > header > img
+{
+    width: 100%;
+    position: relative;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.10) !important;
+}
+[drawer] > header > label 
+{
+    margin-top: -2px;
+    margin-bottom: -2px;
+    color: rgba(80,80,80,1);
+}
+[drawer] > header H5 + label 
+{
+    position: relative;
+    top: -8px;
+}
+[drawer] ul 
+{
+    margin: 0px !important;
+    padding-top: 4px;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+ul [btn] 
+{
+    width: 100%;
+    text-transform: capitalize !important;
+    padding: 12px 12px !important;
+    font-weight: 500 !important;
+    font-size: 15.8px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
+    
+}
+ul [btn] i 
+{
+    font-size: 25px;
+    margin-top: -4px;
+    margin-right: 14px;
+    margin-left: -4px;
+}
+ul.divider 
+{
+    border-top: 1px solid rgba(100,100,100,0.3);
+}
+[drawer] ul [btn].active 
+{
+    background-color: rgba(1,1,1,0.1) !important;
+    color: var(--accent) !important;
+}
+[btn].active i 
+{
+    font-family: 'Material Icons';
+}
+[btn].active .waves-ripple
+{
+     background-color: var(--accent-ripple);
+}
