@@ -1,4 +1,4 @@
-
+$("[dropdown] > div").addClass("dd-menu");
 
 // Open/close
 $(document).on('click', '.dropdown', function(event) {
@@ -571,6 +571,11 @@ $("a[accordion]").addClass("ripple");
 $(".tabs > span[action] > label").addClass("ripple");
 $(".dropdown > label").addClass("ripple");
 $(".dropdown li").addClass("ripple");
+
+$( "[drawer] > *" ).wrapAll( "<div class='overflow'></div>" );
+
+//$( "[dropdown] > a.fwf" ).wrapAll( "<div class='dd-menu'></div>" );
+
 (function(window) {
     'use strict';
 

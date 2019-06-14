@@ -2725,24 +2725,24 @@ v
   width: 100%;
   visibility: hidden;
 }
-[drawer] > header > a, [drawer] > header > article, [drawer] > header > H1, [drawer] > header > H2, [drawer] > header > H3, [drawer] > header > H4, [drawer] > header > H5, [drawer] > header > H6, [drawer] > header > sub, [drawer] > header > p, [drawer] > header > label
+[drawer] header > a, [drawer] header > article, [drawer] header > H1, [drawer] header > H2, [drawer] header > H3, [drawer] header > H4, [drawer] header > H5, [drawer] header > H6, [drawer] header > sub, [drawer] header > p, [drawer] header > label
 {
     padding: 0px 14px;
 }
-[drawer] > header 
+[drawer] header 
 {
     padding-bottom: 10px;
 }
-[drawer] > header > :first-child:not(img)
+[drawer] header > :first-child:not(img)
 {
     padding-top: 16px;
     padding-bottom: 10px;
 }
-[drawer] > header > H5 
+[drawer] header > H5 
 {
     font-weight: 450;
 }
-[drawer] > header > img.profile
+[drawer] header > img.profile
 {
     width: 60px;
     border-radius: 50px;
@@ -2752,19 +2752,19 @@ v
     margin-top: 3px;
     margin-bottom: 3px;
 }
-[drawer] > header > img
+[drawer] header > img
 {
     width: 100%;
     position: relative;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.10) !important;
 }
-[drawer] > header > label 
+[drawer] header > label 
 {
     margin-top: -2px;
     margin-bottom: -2px;
     color: rgba(80,80,80,1);
 }
-[drawer] > header H5 + label 
+[drawer] header H5 + label 
 {
     position: relative;
     top: -8px;
@@ -2776,8 +2776,7 @@ v
     padding-bottom: 4px;
     padding-left: 6px !important;
     padding-right: 6px !important;
-    overflow-y: auto !important;
-    height:  100%;
+    
 
 }
 ul [btn] 
@@ -2881,4 +2880,19 @@ ul.divider
   max-height: 0;
   transition: max-height 0.2s ease-out;
   overflow: hidden !important;
+}
+.overflow {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+}
+ul > label
+{
+    font-weight: 450;
+    color: rgba(80,80,80,1);
+    padding-left: 2px;
+}
+[dropdown] ul
+{
+    display: inline-block !important;
 }
