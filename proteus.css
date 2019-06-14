@@ -720,9 +720,8 @@ details summary::-webkit-details-marker {
 
 [collapsible]
 {
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20) !important;
   display: block;
-  background-color: white;
+border-top: 1px solid rgba(100,100,100,0.3);
 }
 
 [collapsible] > a{
@@ -745,7 +744,6 @@ details summary::-webkit-details-marker {
 }
 
 [collapsible] > a.active {
-  border-bottom: 1px solid rgba(70,70,70,0.3) !important;
   transition: all 0.3s;
   border-radius: 0px 0px 0px 0px !important;
 }
@@ -2661,11 +2659,7 @@ v
 
 
 
-[drawer] .content {
-  height: 100%;
-  position: relative;
-  overflow-y: auto;
-}
+
 .rx_noselect {
   /* iOS Safari */
   -webkit-touch-callout: none;
@@ -2706,6 +2700,7 @@ v
   left: 0px;
   top: 0;
   bottom: 0;
+  display: block;
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
@@ -2720,6 +2715,7 @@ v
   -ms-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
   -o-box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
   box-shadow: 3px 0 16px -3px rgba(0, 0, 0, 0.4);
+   
 }
 [drawer] .antiSelect {
   position: absolute;
@@ -2777,8 +2773,12 @@ v
 {
     margin: 0px !important;
     padding-top: 4px;
+    padding-bottom: 4px;
     padding-left: 6px !important;
     padding-right: 6px !important;
+    overflow-y: auto !important;
+    height:  100%;
+
 }
 ul [btn] 
 {
@@ -2793,10 +2793,10 @@ ul [btn]
     margin-bottom: 1px !important;
     
 }
-ul [btn] i 
+ul [btn] [icon]
 {
     font-size: 25px;
-    margin-top: -4px;
+    margin-top: -3px;
     margin-right: 14px;
     margin-left: -4px;
 }
@@ -2809,11 +2809,76 @@ ul.divider
     background-color: rgba(1,1,1,0.1) !important;
     color: var(--accent) !important;
 }
-[btn].active i 
+[btn].active [icon] 
 {
     font-family: 'Material Icons';
 }
 [btn].active .waves-ripple
 {
      background-color: var(--accent-ripple);
+}
+[drawer] .label {
+    position: fixed;
+    top: 0px;
+    width: 25px;
+    right: -25px;
+    height: 100%;
+
+}
+[drawer] ul::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+[accordion].divider 
+{
+  border-top: 1px solid rgba(100,100,100,0.3);
+}
+
+
+
+[accordion] {
+  display: block;
+  background-color: transparent;
+  border-top: 1px solid rgba(100,100,100,0.3);
+  cursor: pointer;
+  padding: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 17px;
+  transition: all 0.2s ease !important;
+    font-weight: 450;
+  color: rgba(50,50,50,1);
+    
+}
+[accordion]:after 
+{
+    content: "";
+  clear: both;
+  display: table;
+}
+[accordion] [icon]
+{
+    float: right;
+     transition: all 0.2s ease;
+    margin: -3px !important;
+    color: rgba(80,80,80,1);
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+[accordion].active [icon]{
+  transform: rotate(180deg);
+    transition: all 0.2s ease;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+[drawer] ul[content], ul[content] {
+  padding: 0px 12px;
+  background-color: white;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  overflow: hidden !important;
 }
