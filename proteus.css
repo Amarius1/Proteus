@@ -590,14 +590,19 @@ input[search]:focus::-webkit-input-placeholder {
   border-radius: var(--corner-radius);
   background-color: white;
   position: relative;
-  margin: 5px 5px;
-  min-width: 300px;
+  margin: 3px 3px;
+  min-width: 136px;
   min-height: 100px;
   display: inline-block;
   vertical-align: top;
   transition: all 0.4s;
 }
-
+[card].flat {
+  box-shadow: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(70,70,70,0.3);
+}
 
 
 [card] > a, [card] > article, [card] > H1, [card] > H2, [card] > H3, [card] > H4, [card] > H5, [card] > H6, [card] > sub
@@ -2732,15 +2737,24 @@ v
 [drawer] header 
 {
     padding-bottom: 10px;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    background-color: var(--light);
+    z-index: 999;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+    /*padding: 0px 14px;*/
 }
 [drawer] header > :first-child:not(img)
 {
     padding-top: 16px;
     padding-bottom: 10px;
 }
-[drawer] header > H5 
+[drawer] header > H5, [drawer] header > H4, [drawer] header > H3, [drawer] header > H2, [drawer] header > H1, [drawer] header > H6, [drawer] header > p
 {
-    font-weight: 450;
+    font-weight: 410;
+    margin: 0 !important;
+  
 }
 [drawer] header > img.profile
 {
@@ -2824,10 +2838,17 @@ ul.divider
     height: 100%;
 
 }
-[drawer] ul::-webkit-scrollbar {
-    width: 5px;
+[drawer] > div::-webkit-scrollbar {
+    width: 3px;
 }
 
+[drawer] > div::-webkit-scrollbar * {
+    background: transparent; 
+}
+
+[drawer] > div::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3) !important; 
+}
 
 [accordion].divider 
 {
@@ -2841,7 +2862,7 @@ ul.divider
   background-color: transparent;
   border-top: 1px solid rgba(100,100,100,0.3);
   cursor: pointer;
-  padding: 14px;
+  padding: 14px !important;
     padding-left: 12px;
     padding-right: 12px;
   width: 100%;
