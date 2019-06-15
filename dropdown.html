@@ -24,72 +24,68 @@
 
     <section bar-top>
         <a btn icon>menu</a>
-        <p>Dropdown</p>
+        <p>Menus</p>
         
         <span actions>
             <a href="https://material.io/design/components/tabs.html" btn class="outlined accent">Resources</a>
         </span>
     </section>
  <span left dropdown>
-      	<a btn icon class="activator">more_vert</a>
-      	<ul class="dd-menu">
-          <a class="ripple">Food</a>
-          <a class="ripple">Clothes</a>
-           <a class="ripple">Accessories</a>
-      		<a class="ripple divider">Xiaomi</a>
-        </ul>
-      </span>
+     <a btn icon>more_vert</a>
+     <ul>
+         <a>Food</a>
+         <a>Clothes</a>
+         <a>Accessories</a>
+         <a class="divider">Xiaomi</a>
+     </ul>
+ </span>
 
-     <span dropdown>
-      	<a btn icon class="activator">more_vert</a>
-      	<div class="dd-menu">
-          <a class="ripple">Food</a>
-      		<a class="ripple">Clothes</a>
-      		<a class="ripple">Accessories</a>
-            	<a class="ripple">Accessories</a>
-            	<a class="ripple">Accessories</a>
-            	<a class="ripple">Accessories</a>
-            	<a class="ripple">Accessories</a>
-            	<a class="ripple">Accessories</a>
-            	<a class="ripple">Accessories</a>
-      		<a class="ripple divider">Xiaomi</a>
-        </div>
-      </span>
-  
+ <span dropdown>
+     <a btn icon>more_vert</a>
+     <ul>
+         <a>Food</a>
+         <a>Clothes</a>
+         <a>Accessories</a>
+         <a>Accessories</a>
+         <a>Accessories</a>
+         <a>Accessories</a>
+         <a>Accessories</a>
+         <a>Accessories</a>
+         <a>Accessories</a>
+         <a class="divider">Xiaomi</a>
+     </ul>
+ </span>
 
     
   <!-- Custom select structure --> 
 
-<span class="dropdown">
-    <label class="current">Companies</label>
-    <div class="list">
-        <ul>
-            <li class="option selected" data-value="None" data-display-text="Companies">None</li>
-            <li class="option" data-value="xiaomi">Xiaomi</li>
-            <li class="option" data-value="samsung">Samsung</li>
-            <li class="option" data-value="lenovo">Motorola</li>
-        </ul>
-    </div>
+<span select>
+    <label>Companies</label>
+    <ul>
+        <a selected data-value="None" data-display-text="Companies">None</a>
+        <a data-value="xiaomi">Xiaomi</a>
+        <a data-value="samsung">Samsung</a>
+        <a data-value="lenovo">Motorola</a>
+    </ul>
+</span>
+<span select>
+    <label>Fruit</label>
+    <ul>
+        <a selected data-value="None" data-display-text="Fruit">None</a>
+        <a>Apple</a>
+        <a>Banana</a>
+        <a>Raspberry</a>
+        <a>Grapes</a>
+        <a>Melons</a>
+        <a>Tomatoes</a>
+        <a>Avocado</a>
+        <a>Citrus</a>
+        <a>Pear</a>
+        <a>Orange</a>
+    </ul>
 </span>
     
-<span class="dropdown">
-    <label class="current">Fruit</label>
-    <div class="list">
-        <ul>
-            <li class="option selected" data-value="None" data-display-text="Fruit">None</li>
-            <li class="option">Apple</li>
-            <li class="option">Banana</li>
-            <li class="option">Raspberry</li>
-            <li class="option">Grapes</li>
-            <li class="option">Melons</li>
-            <li class="option">Tomatoes</li>
-            <li class="option">Avocado</li>
-            <li class="option">Citrus</li>
-            <li class="option">Pear</li>
-            <li class="option">Orange</li>
-        </ul>
-    </div>
-</span>
+
     <br><br><br>
 <H6 style="display: block; margin-left: 10px;">For scale:</H6><br>
     
@@ -98,7 +94,33 @@
   		<label for="vat">Label Text</label>
   	</span>
 
+    <span style="min-height: 10px !important" card>
+        <a accordion>Your data<i icon>expand_more</i></a>
+        <ul style="background-color: transparent; padding: 0px;" content>
 
+            <table>
+                <thead>
+                    <th>Today</th>
+                    <th>Calories</th>
+                    <th>Distance (km)</th>
+                    <th>Steps</th>
+                </thead>
+                <tr>
+                    <td>Ran</td>
+                    <td>159</td>
+                    <td>2.4</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td>Cycled</td>
+                    <td>237</td>
+                    <td>9.0</td>
+                    <td>-</td>
+                </tr>
+            </table>
+
+        </ul>
+    </span>
   <!-- Custom select structure --> 
 
 
