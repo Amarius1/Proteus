@@ -23,7 +23,7 @@
 <body style="background-color: rgba(235,235,235,0.1); overflow-x: hidden;">
 
     <section bar-top class="fixed flat">
-        <a btn icon>menu</a>
+        <a btn icon id="drawer">menu</a>
         <p>Proteus</p>
         
         <span actions>
@@ -35,8 +35,27 @@
     <H4 center>Components</H4>
     <a btn href="tabs.html" class="raised accent">Tabs</a>
     <a btn href="dropdown.html" class="raised accent">Dropdown</a>
+    <a btn href="drawer.html" class="raised accent">Drawer</a>
     
     </section>
+    
+    
+    
+     <section drawer>
+    <header>
+        <H5>Proteus</H5>
+        <label>A material design framework</label>
+    </header>
+    <a accordion>Components<i icon>expand_more</i></a>
+    <ul content style=" border-bottom: 1px solid rgba(70,70,70,0.3);">
+        <a btn href="tabs.html">Tabs</a>
+        <a btn href="dropdown.html">Dropdown</a>
+        <a btn href="drawer.html">Drawer</a>
+    </ul>
+         <br><br><br><br><br><br>   
+    <article style="margin-left: 12px;">P.S. these are just for show, the next pages don't all have functioning side drawers as of yet.</article>
+</section>
+
     <!--scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="proteus.js"></script>
