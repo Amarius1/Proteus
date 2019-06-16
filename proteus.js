@@ -5,6 +5,12 @@ $("[select]").addClass("dropdown");
 $("[select] > ul").addClass("list");
 $("[select] > ul > a").addClass("ripple");
 $("[select] [selected]").addClass("selected");
+$("[drawer] ul > a").attr( 'btn', ' ' );
+$("a[btn] > i").attr( 'icon', ' ' );
+
+
+
+
 
 // Open/close
 $(document).on('click', '.dropdown', function(event) {

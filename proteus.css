@@ -192,6 +192,10 @@ body
 {
   border-radius: var(--corner-radius);
 }
+.round
+{
+    border-radius: 50px;
+}
 .depth-0
 {
 box-shadow: none !important;
@@ -392,8 +396,36 @@ box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0
 {
   background-color: var(--accent-ripple);
 }
-
-
+.flat[btn] {
+    box-shadow: none !important;
+    background-color: #f5f5f5;
+    font-weight: 500;
+    display: inline-flex;
+    color: #212121;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    border: none;
+    border-radius: var(--corner-radius);
+    transition: .28s ease;
+    padding: 7px 12px;
+    font-size: 14px;
+    line-height: 20px !important;
+    letter-spacing: 1.16px;
+    cursor: pointer;
+    outline: none;
+    vertical-align: middle;
+    font-weight: 501;
+    margin: 3px 2px;
+    text-decoration: none;
+}
+.flat[btn].accent {
+    background-color: var(--accent);
+    color: white;
+}
+.accent[btn].accent .waves-ripple
+{
+  background-color: rgba(255,255,255,0.34);
+}
 .raised[btn]:not(.outlined):not(.flat):not([icon])
 {
   background-color: #f5f5f5;
@@ -1539,7 +1571,11 @@ input[type=checkbox]:indeterminate:after
 
 
 
-
+[textfield]
+{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
 
 
 [textfield]:not(.outlined) {
@@ -2382,12 +2418,10 @@ table.list
 .dropdown {
 
   background-color: transparent !important;
-  border-radius: 5px;
   box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
-  float: left;
-  font-size: 17px;
+  font-size: 17px; vertical-align: top;
   font-weight: normal;
   height: 54px;
   line-height: 54px;
@@ -2398,14 +2432,61 @@ table.list
           user-select: none;
   white-space: nowrap;
   width: 130px;
-  margin: 8px;
-    margin-left: 4px; margin-right: 4px;
+  margin: 4px;
+    margin-left: 3px; margin-right: 3px;
     position: relative;
     z-index: 4 !important;
     border-radius: 5px 5px 0px 0px;
       user-select: none !important;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 -webkit-tap-highlight-color: transparent;
+     vertical-align: top;
+}
+.dropdown.outlined label {
+
+    border-radius: 5px 5px 5px 5px !important;
+    border: 1.5px solid rgba(100,100,100,0.4);
+    background-color: transparent;
+    line-height: 50px;
+}
+.dropdown.round label {
+
+    border-radius: 40px !important;
+}
+.dropdown.outlined.open label
+{
+    border: 1.5px solid var(--accent);
+}
+.dropdown.outlined ul
+{
+     border-radius: 5px 5px 5px 5px;
+}
+.dropdown.condensed {
+  height: 34px;
+  width: 130px;
+    margin: 3px;
+  line-height: 0px !important;
+}
+.dropdown.outlined.condensed label
+{
+    font-size: 16px; 
+    font-weight: 400;
+    line-height: 32px !important;
+    border-width: 1px;
+    border-color: rgba(70,70,70,1);
+    
+}
+.dropdown.condensed label
+{
+    font-size: 16px; 
+    font-weight: 400;
+    line-height: 34px !important;
+    
+}
+.dropdown.outlined.condensed.open label
+{
+    border-width: 1px !important;
+    border-color: var(--accent);
 }
 .dropdown label 
 {
@@ -2468,13 +2549,14 @@ table.list
   margin-top: -2px;
   pointer-events: none;
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: 50%;
   z-index: 10 !important;
 }
 .dropdown.open
 {
      user-select: none !important;
+    z-index: 6 !important;
 }
 .dropdown.open:after {
   -webkit-transform: rotate(-180deg);
@@ -2507,7 +2589,7 @@ table.list
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: -2 !important;
+  z-index: 6 !important;
     width: 130px;
      box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20) !important;
       animation: scale-out-top 0.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -2516,11 +2598,13 @@ table.list
 .dropdown ul * 
 {
     display: block;
+    z-index: 9999 !important;
 }
 .dropdown.open ul 
 {
     
       animation: scale-in-top 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    z-index: 9999 !important;
 }
 @keyframes scale-in-top {
   0% {
@@ -2829,6 +2913,12 @@ ul [btn] [icon]
     margin-top: -3px;
     margin-right: 14px;
     margin-left: -4px;
+    color: rgba(60,60,60,1);
+}
+[btn] [icon]
+{
+    margin-bottom: -5px;
+    margin-top: -2px;
 }
 ul.divider 
 {
@@ -2837,6 +2927,10 @@ ul.divider
 [drawer] ul [btn].active 
 {
     background-color: rgba(1,1,1,0.1) !important;
+    color: var(--accent) !important;
+}
+[drawer] ul [btn].active [icon]
+{
     color: var(--accent) !important;
 }
 [btn].active [icon] 
@@ -2939,3 +3033,8 @@ ul > label
     display: block !important;
     margin: 0px !important;
 }
+
+
+
+
+
