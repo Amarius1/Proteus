@@ -944,20 +944,20 @@ $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 20) {
-        $("nav.flat").addClass("depth-2");
+        $("[bar].flat:not(.bottom)").addClass("depth-2");
     } else {
-        $("nav.flat").removeClass("depth-2");
+        $("[bar].flat:not(.bottom)").removeClass("depth-2");
     }
 });
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
     if (scroll >= 7) {
-          $("nav.prominent").addClass("condensed");
+          $("[bar].prominent").addClass("condensed");
 
 
     } else {
-        $("nav.prominent").removeClass("condensed");
+        $("[bar].prominent").removeClass("condensed");
 
 
     }

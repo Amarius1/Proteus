@@ -1,0 +1,181 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Proteus</title>
+    <!--down of a brave new world-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="icon.png">
+
+    <link href="proteus.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
+
+    <style>
+        .demo {
+            height: 300px;
+            width: 320px;
+            z-index: 999;
+        }
+
+        .demo [bar] {
+            border-radius: 0px 0px 5px 5px
+        }
+        .demo [bar].inset.bottom:before
+        {
+            border-radius: 0px 0px 5px 5px
+        }
+    </style>
+</head>
+
+<body style="background-color: rgba(235,235,235,0.1); overflow-x: hidden;">
+
+    <section bar class="flat fixed">
+        <a btn icon id="drawer">menu</a>
+        <p>App bar: bottom</p>
+
+        <span actions>
+            <a href="https://material.io/design/components/tabs.html" btn class="outlined accent">Resources</a>
+        </span>
+    </section>
+
+    <br><br><br><br>
+    <section container class="center">
+
+        <span card class="demo">
+            <article>This is a regular bottom bar.</article>
+            <section bar class="bottom">
+                <a btn icon>menu</a>
+                <p>Bar</p>
+
+                <span actions>
+                    <a btn icon class="accent">explore</a>
+                    <a btn class="outlined accent">Button</a>
+                </span>
+            </section>
+        </span>
+
+        <span card class="demo">
+            <article>This is a flat bottom bar.</article>
+            <section bar class="bottom flat">
+                <a btn icon>menu</a>
+                <p>Bar</p>
+
+                <span actions>
+                    <a btn icon>camera_enhance</a>
+                    <a btn class="raised accent">Button</a>
+                </span>
+            </section>
+        </span>
+
+        <span card class="demo">
+            <article>Acented flat bottom bar with a FAB.</article>
+            <section bar class="accent bottom flat">
+                <a btn icon>menu</a>
+                <p>Bar</p>
+                <a btn icon class="fab">add</a>
+                <span actions>
+                    <a btn class="raised">Button</a>
+                </span>
+            </section>
+        </span>
+
+        <span card style="width: 53%;" class="demo">
+            <article>Acented flat bottom bar with extended accented FAB.</article>
+            <section bar class="accent bottom flat">
+                <a btn icon>menu</a>
+                <a btn class="fab extended accent"><i>add_shopping_cart</i>Add to cart</a>
+                <div actions>
+                    <a btn icon>search</a>
+                    <span dropdown from-bottom>
+                        <a btn icon>more_vert</a>
+                        <ul>
+                            <a>Food</a>
+                            <a>Clothes</a>
+                            <a>Accessories</a>
+                            <a class="divider">Technology</a>
+                        </ul>
+                    </span>
+                </div>
+            </section>
+        </span>
+
+        <span card class="demo">
+            <article>Acented flat bottom bar with inset FAB <span accent>(WIP)</span>.</article>
+            <section bar class="inset accent bottom ">
+                <a btn icon>menu</a>
+                <p>Bar</p>
+                <a btn icon class="fab accent">add</a>
+                <span actions>
+                    <span dropdown from-bottom>
+                        <a btn icon>more_vert</a>
+                        <ul>
+                            <a>Food</a>
+                            <a>Clothes</a>
+                            <a>Accessories</a>
+                            <a class="divider">Technology</a>
+                        </ul>
+                    </span>
+                </span>
+            </section>
+        </span>
+
+
+        <span card class="demo">
+            <article>Expandable bottom bar.</article>
+            <section bar class="bottom">
+              
+                 <a accordion>More info<i icon>expand_more</i></a>
+                <ul content>
+                    Expanded content.
+                </ul>
+            </section>
+        </span>
+
+    </section>
+
+    <section drawer>
+        <header>
+            <H5>Proteus</H5>
+            <label>A material design framework</label>
+        </header>
+        <a accordion>Your account<i icon>expand_more</i></a>
+        <ul content>
+            <a>Payment</a>
+            <a>Apps</a>
+            <a>Giftcards</a>
+        </ul>
+        <ul class="divider">
+            <a class="active"><i icon>folder</i>My files</a>
+            <a><i icon>theaters</i>Shows</a>
+            <a><i icon>watch</i>Wear OS</a>
+            <a><i icon>videogame_asset</i>Stadia</a>
+            <a><i icon>smartphone</i>Your Device</a>
+            <a><i icon>phonelink</i>Phonelink</a>
+            <a><i icon>opacity</i>Theme</a>
+            <a><i icon>theaters</i>Shows</a>
+            <label>Media</label>
+            <a><i icon>videogame_asset</i>Stadia</a>
+            <a><i icon>smartphone</i>Your Device</a>
+            <a><i icon>phonelink</i>Phonelink</a>
+            <a><i icon>opacity</i>Theme</a>
+            <a><i icon>theaters</i>Shows</a>
+            <a><i icon>videogame_asset</i>Stadia</a>
+            <a><i icon>smartphone</i>Your Device</a>
+            <a><i icon>phonelink</i>Phonelink</a>
+            <a><i icon>opacity</i>Theme</a>
+            <a><i icon>theaters</i>Shows</a>
+        </ul>
+    </section>
+    <br><br><br>
+    <!--scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="proteus.js"></script>
+
+
+</body>
+
+</html>
