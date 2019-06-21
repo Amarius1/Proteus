@@ -531,6 +531,7 @@ sub {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 1px -2px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
     user-select: none;
     z-index: 999999;
+    
 }
 
 [bar].accent {
@@ -539,6 +540,7 @@ sub {
 }
 [bar].accent * {
     color: white;
+    
 }
 
 [bar].accent [icon] {
@@ -551,6 +553,9 @@ sub {
     left: 0px !important;
     filter: drop-shadow(0 0 3px rgba(70, 70, 70, 0.4));
     box-shadow: none;
+     vertical-align: middle;
+    height: auto;
+   
 }
 [bar].bottom .fab
 {
@@ -592,13 +597,12 @@ sub {
 [bar] * {
     display: inline-block;
     vertical-align: middle;
-
 }
 
 [bar] p {
     margin: -2px !important;
     vertical-align: sub !important;
-    line-height: 40px !important;
+    line-height: 42px !important;
     font-size: 23px;
     align-items: stretch;
     user-select: text !important;
@@ -611,7 +615,21 @@ sub {
     padding: 0px 0px;
 
 }
+[bar] p:after {
+  content: '';
+  width: 2px;
+  height: 10px;
+  font-size: 25px;
+    line-height: 42px;
+    vertical-align: middle !important;
 
+  display: inline-block;
+  background: transparent;
+}
+[bar] .right
+{
+    float: right;
+}
 [bar] [actions] [div][right] {
     float: right;
 }
@@ -723,6 +741,8 @@ input[search]:focus::-webkit-input-placeholder {
   left: 0;
   right: 0;
   bottom: 0;
+   vertical-align: middle;
+    height: auto;
   background-color: var(--accent);
   box-shadow: none !important;
     filter: none !important;
@@ -1237,7 +1257,7 @@ a.list.active .waves-ripple {
     outline: none;
     vertical-align: middle;
     font-weight: 500;
-    margin: 1px 5px;
+    margin: 1px 2px;
     background-color: rgba(70, 70, 70, 0.1);
 }
 
@@ -3462,8 +3482,28 @@ ul.divider {
     border-top: 1px solid rgba(100, 100, 100, 0.3);
 }
 
+[bar] [accordion]
+{
+    display: inline-block !important;
+}
 
-
+[accordion][icon] 
+{
+    display: inline-block;
+    border-radius: 50px;
+    font-size: 25.3px;
+    margin: 0px;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    padding: 10.5px 10.5px !important;
+    overflow: hidden;
+    position: relative;
+}
+[accordion][icon].active
+{
+    transform: rotate(180deg);
+    transition: all 0.2s ease;
+}
 [accordion] {
     display: block;
     background-color: transparent;
@@ -3472,7 +3512,7 @@ ul.divider {
     padding: 14px !important;
     padding-left: 12px;
     padding-right: 12px;
-    width: 100%;
+    max-width: 100%;
     border: none;
     text-align: left;
     outline: none;
@@ -3505,15 +3545,29 @@ ul.divider {
 /* Style the collapsible content. Note: hidden by default */
 
 [accordion] + [content] {
-    padding: 0px 12px;
+    padding: 0px 0px;
     background-color: white;
     max-height: 0;
     transition: max-height 0.2s ease-out;
     overflow: hidden !important;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
+    width: 100%;
 }
-
+[content]:before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  display: inline-block;
+  background: transparent; /* Remove, just showing empty line */
+}
+[content]:after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  display: inline-block;
+  background: transparent; /* Remove, just showing empty line */
+}
 .overflow {
     height: 100%;
     position: relative;
