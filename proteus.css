@@ -648,6 +648,14 @@ sub {
     font-size: 25.3px;
     transition: all 0.4s;
 }
+a[icon] {
+    border-radius: 40px;
+    padding: 7.8px 7.8px;
+    margin: 0px 1px;
+    color: rgba(70, 70, 70, 1);
+    font-size: 25.3px;
+    transition: all 0.4s;
+}
 
 [btn][icon].accent {
     border-radius: 40px;
@@ -3783,4 +3791,68 @@ progress.circular:indeterminate::-moz-progress-bar {
         border-bottom-color: currentColor;
         transform: rotate(225deg);
     }
+}
+
+
+
+
+
+		[tabs] [content]{
+			display: none;
+			background: #ededed;
+			padding: 15px;
+		}
+
+		[tabs] [content][active]{
+			display: inherit;
+		}
+
+
+.switch a
+{
+    display: inline-flex;
+    color: #212121;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    border: none;
+    transition: .28s ease;
+    padding: 7px 13px;
+    font-size: 14px;
+    line-height: 20px !important;
+    letter-spacing: 1.16px;
+    cursor: pointer;
+    outline: none;
+    vertical-align: middle;
+    font-weight: 501;
+    margin: 0px;
+    text-decoration: none;
+    height: 100% !important;
+    padding-top: 17px;
+ 
+ 
+}
+[bar].switch 
+{
+     text-align: center;
+    padding: 0px;
+    height: 56px;
+    display: inline-flex;
+    justify-content: center;
+}
+.switch i
+{
+    font-size: 28px;
+    margin-top: -3px;
+}
+.switch a[active]
+{
+    color: var(--accent);
+      transition: all 0.03s;
+}
+.switch a[active] [icon]
+{
+     font-family: 'Material Icons' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    transition: all 0.03s;
 }

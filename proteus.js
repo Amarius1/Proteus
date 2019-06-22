@@ -7,9 +7,22 @@ $("[select] > ul > a").addClass("ripple");
 $("[select] [selected]").addClass("selected");
 $("[drawer] ul > a").attr( 'btn', ' ' );
 $("a[btn] > i").attr( 'icon', ' ' );
+$(".switch > a").addClass("ripple");
 
 
+$(document).ready(function(){
+	
+	$('.switch a[target]').click(function(){
+		var tab_id = $(this).attr('target');
 
+		$('.switch a[target]').removeAttr("active");
+		$('[content]').removeAttr("active");
+
+		$(this).attr( 'active', ' ' );
+		$("#"+tab_id).attr( 'active', ' ' );
+	})
+
+})
 
 
 // Open/close

@@ -24,8 +24,8 @@
         .demo [bar] {
             border-radius: 0px 0px 5px 5px
         }
-        .demo [bar].inset.bottom:before
-        {
+
+        .demo [bar].inset.bottom:before {
             border-radius: 0px 0px 5px 5px
         }
     </style>
@@ -127,7 +127,7 @@
         <span card class="demo">
             <article>Expandable bottom bar.</article>
             <section bar class="bottom">
-               <p style="padding-left: 8px">Prices</p>
+                <p style="padding-left: 8px">Prices</p>
                 <span chip>From $2.99!</span>
                 <a accordion icon class="right">expand_less</a>
                 <ul content>
@@ -135,13 +135,40 @@
                 </ul>
             </section>
         </span>
-        
-          <span card class="demo">
-            <article>Bottom tabs</article>
-            <section bar class="bottom">
-               <a tab>Tab1</a>
+
+        <span card class="demo">
+            <article>Tabbed content.</article>
+            <div tabs>
+                <div id="1" content active>
+                    Tab 1
+                </div>
+                <div id="2" content>
+                    Tab 2
+                </div>
+                <div id="3" content>
+                    Tab 3
+                </div>
+                <div id="4" content>
+                    Tab 4
+                </div>
+            </div>
+            <section bar class="bottom switch">
+                <a target="1" active><i icon>account_circle</i></a>
+                <a target="2"><i icon>description</i></a>
+                <a target="3"><i icon>assessment</i></a>
+                <a target="4"><i icon>explore</i></a>
+                
             </section>
         </span>
+
+
+
+
+
+
+
+
+
 
     </section>
 
