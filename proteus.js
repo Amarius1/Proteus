@@ -9,8 +9,8 @@ $("[drawer] ul > a").attr( 'btn', ' ' );
 $("a[btn] > i").attr( 'icon', ' ' );
 $(".switch > a").addClass("ripple");
 
-
-$(document).ready(function(){
+$(document).ready(function () {
+     $('.switch').each(function () {
 	
 	$('.switch a[target]').click(function(){
 		var tab_id = $(this).attr('target');
@@ -23,7 +23,29 @@ $(document).ready(function(){
 	})
 
 })
-
+})
+$('.switch > a').on('click', function () { //Click on button
+  
+  // $(this) is clicked button
+  
+  $(this) 
+    .closest('[tabs]') // Look for its parent
+    .find($('.switch > a')) // Find all buttons
+    .removeClass('active'); // And remove active class from 'em
+  
+  $(this).addClass('active'); // Make pressed button active
+  
+  $(this)
+    .closest('[tabs]') // Look for its parent
+    .find($('.tab')) // Find all tabs
+    .removeClass('active'); // And remove active class from 'em
+  
+  $(this)
+    .closest('[tabs]') // Look for its parent
+    .find($('.tab')[$('.tab-activator').index($(this))]) // Find tab with equal index 
+    .addClass('active'); // Make it active
+  
+});
 
 // Open/close
 $(document).on('click', '.dropdown', function(event) {

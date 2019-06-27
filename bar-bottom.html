@@ -28,6 +28,12 @@
         .demo [bar].inset.bottom:before {
             border-radius: 0px 0px 5px 5px
         }
+        @media only screen and (max-width: 768px) {
+    .demo.extended {
+
+        display: none;
+    }
+}
     </style>
 </head>
 
@@ -83,7 +89,7 @@
             </section>
         </span>
 
-        <span card style="width: 53%;" class="demo">
+        <span card style="width: 53%;" class="demo extended">
             <article>Acented flat bottom bar with extended accented FAB.</article>
             <section bar class="accent bottom flat">
                 <a btn icon>menu</a>
@@ -136,39 +142,51 @@
             </section>
         </span>
 
-        <span card class="demo">
-            <article>Tabbed content.</article>
-            <div tabs>
-                <div id="1" content active>
-                    Tab 1
-                </div>
-                <div id="2" content>
-                    Tab 2
-                </div>
-                <div id="3" content>
-                    Tab 3
-                </div>
-                <div id="4" content>
-                    Tab 4
-                </div>
+
+        <span tabs card class="demo">
+
+            <div class="tab active">
+                <article>Profile</article>
             </div>
+            <div class="tab">
+                <article>Description</article>
+            </div>
+            <div class="tab">
+                <article>Explore</article>
+            </div>
+
             <section bar class="bottom switch">
-                <a target="1" active><i icon>account_circle</i></a>
-                <a target="2"><i icon>description</i></a>
-                <a target="3"><i icon>assessment</i></a>
-                <a target="4"><i icon>explore</i></a>
-                
+                <a icon class="tab-activator active">account_circle</a>
+                <a icon class="tab-activator">description</a>
+                <a icon class="tab-activator">explore</a>
             </section>
+
         </span>
 
 
+        <span tabs card class="demo">
 
+            <div class="tab active">
+                <article>Profile</article>
+            </div>
+            <div class="tab">
+                <article>Description</article>
+            </div>
+            <div class="tab">
+                <article>Explore</article>
+            </div>
+             <div class="tab">
+                <article>Library</article>
+            </div>
 
+            <section bar class="bottom switch">
+                <a class="tab-activator active"><i icon>home</i>Home</a>
+                <a class="tab-activator"><i icon>trending_up</i>Trending</a>
+                <a class="tab-activator"><i icon>email</i>Inbox</a>
+                <a class="tab-activator"><i icon>folder</i>Library</a>
+            </section>
 
-
-
-
-
+        </span>
 
     </section>
 

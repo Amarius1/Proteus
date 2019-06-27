@@ -980,7 +980,7 @@ input[search]:focus::-webkit-input-placeholder {
     padding: 5px 6px;
 }
 
-[card] > :first-child {
+[card] > :not([content]):first-child {
     position: relative;
     display: block;
     width: 100%;
@@ -1415,7 +1415,7 @@ img[fill] {
 [dropdown][from-bottom].open .dd-menu {
     right: inherit !important;
      animation: scale-in-br 0.13s cubic-bezier(0.250, 0.460, 0.450, 0.940) both !important;
-    bottom: 42px !important;
+    bottom: 0px !important;
     top: inherit !important;
     right: 0px !important;
 
@@ -1423,7 +1423,7 @@ img[fill] {
 [dropdown][from-bottom] .dd-menu {
     right: inherit !important;
      animation: scale-out-br 0.13s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-    bottom: 42px !important;
+    bottom: 0px !important;
     top: inherit !important;
     right: 0px !important;
 
@@ -1521,7 +1521,7 @@ img[fill] {
 [dropdown] .dd-menu {
     opacity: 0;
     position: absolute;
-    top: 42px;
+    top: 5px;
     right: 5px;
     z-index: 1000;
     border-radius: 5px;
@@ -3562,14 +3562,14 @@ ul.divider {
     margin-bottom: 0px !important;
     width: 100%;
 }
-[content]:before {
+[accordion] + [content]:before {
   content: '';
   width: 100%;
   height: 4px;
   display: inline-block;
   background: transparent; /* Remove, just showing empty line */
 }
-[content]:after {
+[accordion] + [content]:after {
   content: '';
   width: 100%;
   height: 4px;
@@ -3797,22 +3797,13 @@ progress.circular:indeterminate::-moz-progress-bar {
 
 
 
-		[tabs] [content]{
-			display: none;
-			background: #ededed;
-			padding: 15px;
-		}
-
-		[tabs] [content][active]{
-			display: inherit;
-		}
+		
 
 
 .switch a
 {
     display: inline-flex;
     color: #212121;
-    text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
     border: none;
     transition: .28s ease;
@@ -3828,8 +3819,12 @@ progress.circular:indeterminate::-moz-progress-bar {
     text-decoration: none;
     height: 100% !important;
     padding-top: 17px;
+    border-radius: 0px !important;
  
- 
+}
+.switch :not([icon])
+{
+    text-transform: uppercase;
 }
 [bar].switch 
 {
@@ -3839,20 +3834,63 @@ progress.circular:indeterminate::-moz-progress-bar {
     display: inline-flex;
     justify-content: center;
 }
-.switch i
+.switch [icon]
 {
     font-size: 28px;
-    margin-top: -3px;
 }
-.switch a[active]
+[tabs] .switch [icon].active 
 {
     color: var(--accent);
-      transition: all 0.03s;
+    font-family: "Material Icons";
+    transition: all 0.2s;
 }
-.switch a[active] [icon]
+[tabs] .switch [icon]
 {
-     font-family: 'Material Icons' !important;
-    font-weight: normal !important;
-    font-style: normal !important;
-    transition: all 0.03s;
+    display: block !important;
+}
+[tabs] .switch a:not([icon])
+{
+    display: block !important;
+     text-align: center;
+    align-items: center;
+    text-transform: capitalize;
+}
+[tabs] .switch a [icon]
+{
+    margin-top: -11px;
+     text-align: center;
+    align-items: center;
+}
+[tabs] .switch a.active [icon]
+{
+    font-family: "Material Icons";
+}
+[tabs] .switch a.active 
+{
+     color: var(--accent);
+    transition: all 0.2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[tabs] .tab {
+  display: none !important;
+  background-color: transparent;
+    padding: 5px 6px;
+}
+[tabs] .tab.active {
+  display: block !important;
 }
